@@ -9,3 +9,7 @@
 .iconLink:hover .iconLink__icon {
   color: theme('colors.zinc.700');
 }
+
+[data-theme='dark'] .iconLink:hover .iconLink__icon {
+  color: theme('colors.zinc.300');
+}
