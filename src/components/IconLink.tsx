@@ -11,8 +11,8 @@ export function IconLink({
 }) {
   return (
     <a href={href} className={`flex flex-col items-center ${styles.iconLink}`} aria-label={text}>
-      <IconComponent boxSize='16' className={styles.iconLink__icon} aria-hidden='true' />
-      <div className={styles.iconLink__text}>{text}</div>
+      <IconComponent boxSize={[14, 14, 16]} className={styles.iconLink__icon} aria-hidden='true' />
+      <div className={`mt-1 ${styles.iconLink__text}`}>{text}</div>
     </a>
   );
 }

@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// this is the wrapper div created by Next.js
+#__next {
+  height: 100%;
+}
