@@ -15,7 +15,7 @@ export default function Home() {
         <meta name='description' content="Jackson McKay's personal website" />
       </Head>
       <main className='p-4 flex flex-col justify-center items-center h-screen'>
-        <Heading as='h1' size='4xl' className='pb-4'>
+        <Heading as='h1' size='4xl' className='pb-4 text-center'>
           Jackson McKay
         </Heading>
         <div className='flex items-center gap-3'>
