@@ -1,0 +1,11 @@
+.iconLink__text {
+  visibility: hidden;
+}
+.iconLink:hover .iconLink__text,
+.iconLink:focus .iconLink__text {
+  visibility: visible;
+}
+
+.iconLink:hover .iconLink__icon {
+  color: theme('colors.zinc.700');
+}
