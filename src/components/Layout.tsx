@@ -10,13 +10,15 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <SkipNavLink>Skip to content</SkipNavLink>
-      <header className='flex justify-end items-center gap-4 px-4 py-2 absolute right-0'>
-        <nav className='flex gap-4 items-center'>
-          <NavLink href='/' text='Home' />
-          <NavLink href='/projects' text='Projects' />
-        </nav>
-        <IconButton aria-label='Toggle theme' icon={themeIcon} onClick={toggleColorMode} />
-      </header>
+      <div className='w-full max-w-4xl relative mx-auto'>
+        <header className='flex justify-end items-center gap-4 px-4 py-2 absolute right-0'>
+          <nav className='flex gap-4 items-center'>
+            <NavLink href='/' text='Home' />
+            <NavLink href='/projects' text='Projects' />
+          </nav>
+          <IconButton aria-label='Toggle theme' icon={themeIcon} onClick={toggleColorMode} />
+        </header>
+      </div>
       {children}
     </>
   );

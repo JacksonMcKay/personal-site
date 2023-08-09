@@ -17,7 +17,7 @@ export default function Projects() {
       <main className='p-4 pb-16 flex flex-col justify-center items-center h-full'>
         <SkipNavContent />
         <Container maxW='4xl' padding={2}>
-          <Heading as='h1' className='pb-8 text-center'>
+          <Heading as='h1' className='pb-8 text-center sr-only'>
             Projects
           </Heading>
           <div className='flex flex-wrap gap-4 justify-center'>
