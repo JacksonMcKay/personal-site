@@ -14,10 +14,10 @@ export default function Projects() {
         <title>Projects - Jackson McKay</title>
         <meta name='description' content="Jackson McKay's personal projects" />
       </Head>
-      <main className='p-4 pb-16 flex flex-col justify-center items-center h-full'>
+      <main className='p-4 pt-16'>
         <SkipNavContent />
         <Container maxW='4xl' padding={2}>
-          <Heading as='h1' className='pb-8 text-center sr-only'>
+          <Heading as='h1' className='pb-8 text-center'>
             Projects
           </Heading>
           <div className='flex flex-wrap gap-4 justify-center'>
