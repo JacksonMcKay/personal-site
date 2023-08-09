@@ -1,5 +1,6 @@
 import { ComponentWithAs, IconProps } from '@chakra-ui/react';
 import styles from './IconLink.module.scss';
+
 export function IconLink({
   href,
   text,
