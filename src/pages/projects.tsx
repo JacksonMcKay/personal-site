@@ -7,6 +7,7 @@ import countriesAppDark from '../../public/countries-dark.png';
 import countriesAppLight from '../../public/countries-light.png';
 import moveTabsAndGroupsDark from '../../public/move-tabs-and-groups-dark.png';
 import moveTabsAndGroupsLight from '../../public/move-tabs-and-groups-light.png';
+import bboxyImgSrc from '../../public/bboxy.png';
 
 interface Project {
   name: string;
@@ -24,6 +25,24 @@ export default function Projects() {
   const moveTabsAndGroupsImgSrc = useColorModeValue(moveTabsAndGroupsLight.src, moveTabsAndGroupsDark.src);
 
   const projects: Project[] = [
+    {
+      name: 'bboxy',
+      description:
+        'Create a bounding box on a map and share it with others via URL or copy the coordinates themselves.',
+      links: [
+        {
+          heading: 'Live',
+          href: 'https://bboxy.jacksonmckay.dev/',
+          text: 'bboxy.jacksonmckay.dev',
+        },
+        {
+          heading: 'Source code',
+          href: 'https://github.com/JacksonMcKay/bboxy',
+          text: 'JacksonMcKay/bboxy',
+        },
+      ],
+      imageSrc: { src: bboxyImgSrc.src, width: 395, height: 400 },
+    },
     {
       name: 'Move tabs and groups',
       description: 'A Chrome extension that allows you to move tabs and tab groups around using keyboard shortcuts.',
@@ -92,6 +111,8 @@ export default function Projects() {
     },
   ];
 
+  const forks: Omit<Project, 'imageSrc'>[] = [];
+
   return (
     <>
       <Head>
@@ -137,20 +158,28 @@ export default function Projects() {
               </Fragment>
             ))}
           </div>
-          <Heading as='h1' className='pt-24 pb-2 text-center'>
-            Forks
-          </Heading>
-          <Text textAlign={'center'}>I didn&apos;t make these but I&apos;ve remixed them to suit my needs.</Text>
-          <Heading as='h2' size='lg' pt={6} pb={4}>
-            bboxfinder
-          </Heading>
-          <p className='pb-3'>Used for finding bounding boxes on a map. I&apos;ve added a satellite view toggle.</p>
-          <Text>Live</Text>
-          <ExternalLink href='https://bbox.jacksonmckay.dev/' text='bbox.jacksonmckay.dev' pl={4} />
-          <Text className='mt-2'>Source code</Text>
-          <ExternalLink href='https://github.com/JacksonMcKay/bboxfinder' text='JacksonMcKay/bboxfinder' pl={4} />
-          <Text className='mt-2'>Original</Text>
-          <ExternalLink href='https://github.com/aaronr/bboxfinder.com' text='aaronr/bboxfinder.com' pl={4} />
+          {forks.length > 0 && (
+            <>
+              <Heading as='h1' className='pt-24 pb-2 text-center'>
+                Forks
+              </Heading>
+              <Text textAlign={'center'}>I didn&apos;t make these but I&apos;ve remixed them to suit my needs.</Text>
+            </>
+          )}
+          {forks.map((fork) => (
+            <Fragment key={fork.name}>
+              <Heading as='h2' size='lg' pt={6} pb={4}>
+                {fork.name}
+              </Heading>
+              <p className='pb-3'>{fork.description}</p>
+              {fork.links.map((link) => (
+                <div key={link.heading} className='flex flex-col'>
+                  <Text>{link.heading}</Text>
+                  <ExternalLink href={link.href} text={link.text} pl={4} />
+                </div>
+              ))}
+            </Fragment>
+          ))}
         </Container>
       </main>
     </>
